@@ -60,11 +60,10 @@ public class Solution {
 					count++;                                                        
 				}                                                                   
 			}                                                                       
-			                                                                        
+			  
 			bw.write("#"+(t+1)+" "+count+"\n");                                     
 			                                                                        
-		}                                                                           
-                                                                                    
+		}
 		br.close();                                                                 
 		bw.flush();                                                                 
 		bw.close();                                                                 
