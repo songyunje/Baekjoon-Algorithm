@@ -1,4 +1,5 @@
 import java.io.*;
+import java.time.format.ResolverStyle;
 import java.util.*;
 
 public class Solution {
@@ -30,8 +31,7 @@ public class Solution {
 					a[i]=temp;
 			}
 			
-			int[] arr = new int[N];
-
+			Set<Integer> set = new HashSet<>();
 			for(int i=0;i<N;i++) {
 				int j=0;
 				int temp=0;
@@ -39,25 +39,17 @@ public class Solution {
 					temp+=a[(i+j)%N]*Math.pow(16, n-j-1);
 					j++;
 				}
-				arr[i]=temp;
+				set.add(temp);
 			}
 			
-			Arrays.sort(arr);
+			List<Integer> list = new ArrayList<>(set);
+			
+			Collections.sort(list, Collections.reverseOrder());
 			
 			sb = new StringBuilder("#"+t+" ");
-			int cnt=0;
-			for(int i=N-1;i>=0;i--) {
-				if(i==N-1)
-					cnt++;
-				else {
-					if(arr[i]==arr[i+1])
-						continue;
-					else
-						cnt++;	
-				}
-				if(cnt==K)
-					sb.append(arr[i]+"\n");
-			}
+			
+			sb.append(list.get(K-1)+"\n");
+	
 			bw.write(sb.toString());
 		}
 		br.close();
