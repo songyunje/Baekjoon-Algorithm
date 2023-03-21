@@ -47,7 +47,8 @@ public class Main {
 		if(a == parent[a]) {
 			return a;
 		}
-		return parent[a]=find(parent[a]);
+		parent[a]=find(parent[a]);
+		return parent[a];
 	}
 	
 	static void combine(int a, int b) {
