@@ -2,7 +2,6 @@ import java.io.*;
 import java.util.*;
 public class Solution {
 	static int N,cnt;
-	static int[] ig;
 	static int[] check;
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -17,11 +16,8 @@ public class Solution {
         	N = Integer.parseInt(st.nextToken());
         	int M = Integer.parseInt(st.nextToken());
         	cnt=0;
-        	ig = new int[N+1];
         	check = new int[N+1];
-        	for(int i=1;i<=N;i++) {
-        		ig[i]=i;
-        	}
+
         	for(int m=0;m<M;m++) {
         		st = new StringTokenizer(br.readLine());
             	int v = Integer.parseInt(st.nextToken());
